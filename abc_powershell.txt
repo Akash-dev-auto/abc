@@ -1,0 +1,6 @@
+$scopeid = Get-Dhcpserverv4scope | Format-Table -Property Scopeid -hidetableheaders 
+
+foreach ($element in $scopeid) {
+  Get-DhcpServerv4Lease $element
+}
+
